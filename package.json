@@ -1,0 +1,27 @@
+{
+  "name": "seajs-loader",
+  "version": "0.0.1",
+  "description": "Webpack loader for seajs",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ipy/seajs-loader.git"
+  },
+  "keywords": [
+    "seajs",
+    "cmd",
+    "webpack",
+    "loader"
+  ],
+  "author": "Sin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ipy/seajs-loader/issues"
+  },
+  "homepage": "https://github.com/ipy/seajs-loader#readme"
+}
