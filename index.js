@@ -32,12 +32,8 @@ function resolve(name, seajsConfig) {
   if(seajsConfig.alias && seajsConfig.alias[name]) {
     name = seajsConfig.alias[name]; 
   }
-  // var arr = name.split('!');
-  // if(arr.length > 1) {
-  //   for (var i = 0; i < arr.length - 1, i++) {
-  //     if(arr[i] === 'text') { arr[i] = 'raw'; }
-  //   }
-  // }
+  var arr = name.split('!');
+  name = arr[arr.length - 1];
   if(name && name[0] === '/') {
     name = name.slice(1);
   }
