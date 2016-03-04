@@ -32,8 +32,8 @@ function resolve(name, seajsConfig) {
   if(seajsConfig.alias && seajsConfig.alias[name]) {
     name = seajsConfig.alias[name]; 
   }
-  var arr = name.split('!');
-  name = arr[arr.length - 1];
+  // var arr = name.split('!');
+  // name = arr[arr.length - 1];
   if(name && name[0] === '/') {
     name = name.slice(1);
   }
@@ -47,11 +47,11 @@ function translate(code, map, seajsConfig) {
     if(node instanceof uglify.AST_Call) {
       var expression = node.expression.print_to_string();
       switch(expression) {
-        case 'define':
-          if(node.args.length > 1) {
-            node.args = node.args.slice(node.args.length - 1);
-          }
-          break;
+        // case 'define':
+        //   if(node.args.length > 1) {
+        //     node.args = node.args.slice(node.args.length - 1);
+        //   }
+        //   break;
         case 'require':
           if(node.args.length == 1 && node.args[0] instanceof uglify.AST_String) {
             node.args[0].value = resolve(node.args[0].value, seajsConfig);
@@ -118,7 +118,7 @@ module.exports = function(source, map) {
     seajsConfigs[this.query] = seajsConfig;
       
     var result = translate(source, map, seajsConfig);
-    this.callback(null, result.source/*, result.map*/); // TODO: source-map 引起一个错误
+    this.callback(null, result.source, result.map); // TODO: source-map 引起一个错误
   } catch(e) {
     console.error(this.resourcePath, e.message)
     this.callback(e);

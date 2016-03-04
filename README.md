@@ -3,7 +3,6 @@
 ### 做的事情
 * 解析 seajs 模块别名
 * 直接翻译 require.async/seajs.use 成 require
-* 去掉 define 参数中的 id 和依赖，只保留 factory 方法
 
 ### 已知限制
 * 没有处理 seajs 相关插件
